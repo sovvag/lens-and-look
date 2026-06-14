@@ -1,0 +1,104 @@
+/* === СТИЛИ ДЛЯ СТРАНИЦЫ 404 === */
+
+.error-container {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-code {
+    font-size: 120px;
+    font-weight: 800;
+    font-family: 'Manrope', sans-serif;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.error-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.error-container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.error-container p {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.error-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.suggestions {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #E1E8F0;
+}
+
+.suggestions h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.suggestions-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.suggestions-links a {
+    color: var(--primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    background: #E8F0FE;
+    border-radius: 40px;
+    transition: all 0.2s;
+}
+
+.suggestions-links a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Адаптив для 404 */
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 80px;
+    }
+    .error-icon {
+        font-size: 60px;
+    }
+    .error-container h1 {
+        font-size: 24px;
+    }
+    .error-container p {
+        font-size: 16px;
+    }
+}

@@ -6,128 +6,17 @@
     <title>Корзина - Lens & Look</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .cart-container {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .cart-header {
-            background: #F8F9FC;
-            padding: 15px 20px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            display: grid;
-            grid-template-columns: 100px 1fr 150px 120px 50px;
-            gap: 15px;
-        }
-        .cart-item {
-            background: white;
-            padding: 20px;
-            border-radius: 16px;
-            margin-bottom: 15px;
-            box-shadow: var(--shadow);
-            display: grid;
-            grid-template-columns: 100px 1fr 150px 120px 50px;
-            gap: 15px;
-            align-items: center;
-            transition: all 0.3s;
-        }
-        .cart-item:hover {
-            transform: translateX(5px);
-        }
-        .cart-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-        .cart-item h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-        .cart-summary {
-            background: #F8F9FC;
-            padding: 30px;
-            border-radius: 24px;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-        }
-        .empty-cart {
-            text-align: center;
-            padding: 80px 20px;
-            background: #F8F9FC;
-            border-radius: 24px;
-        }
-        .empty-cart-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
-        .quantity-btn {
-            background: #E1E8F0;
-            border: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.2s;
-        }
-        .quantity-btn:hover {
-            background: #5F9EF0;
-            color: white;
-        }
-        .remove-btn {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #dc3545;
-            transition: transform 0.2s;
-        }
-        .remove-btn:hover {
-            transform: scale(1.1);
-        }
-        .page-title {
-            margin: 40px 0 30px;
-            font-size: 36px;
-            font-family: 'Manrope', sans-serif;
-        }
-        @media (max-width: 768px) {
-            .cart-container {
-                grid-template-columns: 1fr;
-            }
-            .cart-header {
-                display: none;
-            }
-            .cart-item {
-                grid-template-columns: 80px 1fr;
-                gap: 15px;
-            }
-            .cart-item .item-price,
-            .cart-item .item-quantity,
-            .cart-item .item-remove {
-                grid-column: span 2;
-                justify-content: space-between;
-                display: flex;
-                align-items: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/cart.css">
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="container header-inner">
         <a href="index.html" class="logo">👓 Lens & Look</a>
         <div class="search-bar">
-            <form action="search.html" method="GET" style="display: flex; gap: 10px; width: 100%;">
-                <input type="text" name="q" placeholder="Поиск линз, очков..." required style="width: 100%;">
-                <button type="submit" style="background: #5F9EF0; border: none; border-radius: 40px; padding: 0 20px; color: white; cursor: pointer;">🔍</button>
+            <form action="search.html" method="GET">
+                <input type="text" name="q" placeholder="Поиск линз, очков..." required>
+                <button type="submit">🔍</button>
             </form>
         </div>
         <div class="nav-links">
@@ -136,6 +25,10 @@
             <a href="payment.html">Оплата</a>
             <a href="returns.html">Возврат</a>
             <a href="account.html">Личный кабинет</a>
+            <a href="favorites.html" class="favorites-icon">
+                ❤️ 
+                <span class="favorites-count" id="favoritesCount">0</span>
+            </a>
             <a href="cart.html" class="cart-icon">
                 🛒 
                 <span class="cart-count" id="cartCount">0</span>
@@ -151,279 +44,33 @@
     </div>
 </main>
 
-<!-- FOOTER -->
-<footer style="background: #F8F9FC; padding: 60px 0 30px; margin-top: 80px;">
+<footer>
     <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        <div class="footer-grid">
             <div>
-                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Lens & Look</h4>
-                <p style="color: #5B6E8C;">Заботимся о вашем зрении с 2024 года</p>
+                <h4>Lens & Look</h4>
+                <p>Заботимся о вашем зрении с 2024 года</p>
             </div>
             <div>
-                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Покупателям</h4>
-                <ul style="list-style: none;">
-                    <li><a href="delivery.html" style="text-decoration: none; color: #5B6E8C;">Доставка</a></li>
-                    <li><a href="payment.html" style="text-decoration: none; color: #5B6E8C;">Оплата</a></li>
-                    <li><a href="returns.html" style="text-decoration: none; color: #5B6E8C;">Возврат</a></li>
+                <h4>Покупателям</h4>
+                <ul>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="payment.html">Оплата</a></li>
+                    <li><a href="returns.html">Возврат</a></li>
                 </ul>
             </div>
             <div>
-                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Контакты</h4>
-                <p style="color: #5B6E8C;">📞 8-800-555-01-01</p>
-                <p style="color: #5B6E8C;">✉️ info@lenslook.ru</p>
+                <h4>Контакты</h4>
+                <p>📞 8-800-555-01-01</p>
+                <p>✉️ info@lenslook.ru</p>
             </div>
         </div>
-        <hr style="border-color: #E1E8F0;">
-        <p style="text-align: center; color: #5B6E8C; margin-top: 30px;">© 2024 Lens & Look. Все права защищены.</p>
+        <hr>
+        <p class="copyright">© 2024 Lens & Look. Все права защищены.</p>
     </div>
 </footer>
 
-<script>
-    // === БАЗА ТОВАРОВ (должна совпадать с каталогом) ===
-    const productsDB = [
-        { id: 1, name: "Acuvue Oasys 1-Day", price: 2490, description: "Ежедневные контактные линзы", category: "contacts", image: "product1.jpg" },
-        { id: 2, name: "CooperVision Biofinity", price: 3200, description: "Двухнедельные линзы", category: "contacts", image: "product2.jpg" },
-        { id: 3, name: "Air Optix Night & Day", price: 3850, description: "Линзы непрерывного ношения", category: "contacts", image: "product3.jpg" },
-        { id: 4, name: "Dailies Total 1", price: 2990, description: "Однодневные линзы", category: "contacts", image: "product4.jpg" },
-        { id: 5, name: "Очки Ray-Ban RX", price: 12900, description: "Классические оправы", category: "glasses", image: "product5.jpg" },
-        { id: 6, name: "MyDay daily disposable", price: 1890, description: "Линзы для активной жизни", category: "contacts", image: "product6.jpg" },
-        { id: 7, name: "Очки Oakley", price: 15500, description: "Спортивные очки", category: "sunglasses", image: "product7.jpg" },
-        { id: 8, name: "Clariti 1-Day", price: 2190, description: "Силикон-гидрогелевые линзы", category: "contacts", image: "product8.jpg" },
-        { id: 9, name: "Ночные линзы Paragon CRT", price: 25000, description: "Коррекция во сне", category: "ortho", image: "product9.jpg" },
-        { id: 10, name: "Очки Polaroid", price: 8900, description: "Поляризационные", category: "sunglasses", image: "product10.jpg" }
-    ];
-
-    // === РАБОТА С КОРЗИНОЙ В localStorage ===
-    
-    // Получить корзину
-    function getCart() {
-        const cart = localStorage.getItem('cart');
-        return cart ? JSON.parse(cart) : [];
-    }
-    
-    // Сохранить корзину
-    function saveCart(cart) {
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-    }
-    
-    // Добавить товар
-    function addToCart(productId, quantity = 1) {
-        let cart = getCart();
-        const existingItem = cart.find(item => item.id === productId);
-        
-        if (existingItem) {
-            existingItem.quantity += quantity;
-        } else {
-            cart.push({ id: productId, quantity: quantity });
-        }
-        
-        saveCart(cart);
-        showNotification('✅ Товар добавлен в корзину');
-        renderCart();
-    }
-    
-    // Обновить количество
-    function updateQuantity(productId, newQuantity) {
-        if (newQuantity < 1) newQuantity = 1;
-        let cart = getCart();
-        const item = cart.find(item => item.id === productId);
-        if (item) {
-            item.quantity = newQuantity;
-            saveCart(cart);
-            renderCart();
-        }
-    }
-    
-    // Удалить товар
-    function removeFromCart(productId) {
-        let cart = getCart();
-        cart = cart.filter(item => item.id !== productId);
-        saveCart(cart);
-        showNotification('🗑️ Товар удалён из корзины');
-        renderCart();
-    }
-    
-    // Очистить корзину
-    function clearCart() {
-        if (confirm('Очистить всю корзину?')) {
-            saveCart([]);
-            renderCart();
-            showNotification('🧹 Корзина очищена');
-        }
-    }
-    
-    // Обновить счётчик на иконке корзины
-    function updateCartCount() {
-        const cart = getCart();
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const cartCountElement = document.getElementById('cartCount');
-        if (cartCountElement) {
-            cartCountElement.textContent = totalItems;
-        }
-    }
-    
-    // Показать уведомление
-    function showNotification(message) {
-        let notif = document.getElementById('cartNotification');
-        if (notif) notif.remove();
-        
-        notif = document.createElement('div');
-        notif.id = 'cartNotification';
-        notif.textContent = message;
-        notif.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #5F9EF0;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 40px;
-            z-index: 1000;
-            animation: slideIn 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        `;
-        document.body.appendChild(notif);
-        setTimeout(() => notif.remove(), 2000);
-    }
-    
-    // === ОТРИСОВКА КОРЗИНЫ ===
-    
-    function renderCart() {
-        const cart = getCart();
-        const container = document.getElementById('cartContent');
-        
-        if (cart.length === 0) {
-            // Пустая корзина
-            container.innerHTML = `
-                <div class="empty-cart">
-                    <div class="empty-cart-icon">🛒</div>
-                    <h2 style="margin-bottom: 15px; color: #1E2A3E;">Ваша корзина пуста</h2>
-                    <p style="color: #5B6E8C; margin-bottom: 30px;">Добавьте товары из каталога, чтобы оформить заказ</p>
-                    <a href="catalog.html" class="btn" style="font-size: 16px; padding: 12px 30px;">Перейти в каталог</a>
-                </div>
-            `;
-            updateCartCount();
-            return;
-        }
-        
-        // Получаем полную информацию о товарах
-        const itemsWithDetails = cart.map(cartItem => {
-            const product = productsDB.find(p => p.id === cartItem.id);
-            return {
-                ...cartItem,
-                ...product
-            };
-        }).filter(item => item.name); // отфильтровываем, если товар не найден
-        
-        if (itemsWithDetails.length === 0) {
-            // Если товары есть в корзине, но не найдены в БД — очищаем
-            saveCart([]);
-            renderCart();
-            return;
-        }
-        
-        let subtotal = 0;
-        let itemsHtml = '';
-        
-        itemsWithDetails.forEach(item => {
-            const itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
-            
-            itemsHtml += `
-                <div class="cart-item" data-id="${item.id}">
-                    <img src="assets/images/${item.image}" onerror="this.src='https://placehold.co/80x80/5F9EF0/white?text=👓'">
-                    <div>
-                        <h3>${item.name}</h3>
-                        <p style="color: #5B6E8C; font-size: 12px;">Арт: ${item.id}</p>
-                    </div>
-                    <div class="price" style="font-size: 18px;">${item.price.toLocaleString('ru-RU')} ₽</div>
-                    <div class="item-quantity" style="display: flex; gap: 10px; align-items: center;">
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
-                        <span style="min-width: 30px; text-align: center; font-weight: 600;">${item.quantity}</span>
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
-                    </div>
-                    <div class="item-remove">
-                        <button class="remove-btn" onclick="removeFromCart(${item.id})">🗑️</button>
-                    </div>
-                </div>
-            `;
-        });
-        
-        const delivery = 200;
-        const total = subtotal + delivery;
-        
-        container.innerHTML = `
-            <div class="cart-container">
-                <div>
-                    <div class="cart-header">
-                        <div>Товар</div>
-                        <div>Название</div>
-                        <div>Цена</div>
-                        <div>Количество</div>
-                        <div></div>
-                    </div>
-                    ${itemsHtml}
-                </div>
-                <div class="cart-summary">
-                    <h3 style="margin-bottom: 20px;">Итого</h3>
-                    <div style="margin-bottom: 15px; display: flex; justify-content: space-between;">
-                        <span>Товары (${itemsWithDetails.reduce((s, i) => s + i.quantity, 0)} шт.):</span>
-                        <span><strong>${subtotal.toLocaleString('ru-RU')} ₽</strong></span>
-                    </div>
-                    <div style="margin-bottom: 20px; display: flex; justify-content: space-between;">
-                        <span>Доставка:</span>
-                        <span>от 200 ₽</span>
-                    </div>
-                    <hr style="margin: 20px 0; border-color: #E1E8F0;">
-                    <div style="margin-bottom: 25px; display: flex; justify-content: space-between; font-size: 24px; font-weight: 700;">
-                        <span>К оплате:</span>
-                        <span style="color: #5F9EF0;">${total.toLocaleString('ru-RU')} ₽</span>
-                    </div>
-                    <button class="btn" onclick="checkout()" style="width: 100%; padding: 15px; font-size: 16px;">Оформить заказ</button>
-                    <button onclick="clearCart()" style="width: 100%; margin-top: 10px; padding: 12px; background: none; border: 1px solid #dc3545; border-radius: 40px; color: #dc3545; cursor: pointer;">Очистить корзину</button>
-                    <a href="catalog.html" style="display: block; text-align: center; margin-top: 15px; color: #5F9EF0; text-decoration: none;">← Продолжить покупки</a>
-                </div>
-            </div>
-        `;
-        
-        updateCartCount();
-    }
-    
-    function checkout() {
-        const cart = getCart();
-        if (cart.length === 0) {
-            showNotification('🛒 Корзина пуста!');
-            return;
-        }
-        alert('🎉 Спасибо за покупку!\n\nФункция оформления заказа в разработке.\nВаш заказ принят!');
-        // Можно очистить корзину после "покупки":
-        // saveCart([]);
-        // renderCart();
-    }
-    
-    // Добавляем стили для анимации
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Загружаем корзину при загрузке страницы
-    document.addEventListener('DOMContentLoaded', () => {
-        renderCart();
-    });
-</script>
-
 <script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
 </body>
 </html>

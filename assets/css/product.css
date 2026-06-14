@@ -1,0 +1,264 @@
+/* === СТИЛИ ДЛЯ СТРАНИЦЫ ТОВАРА === */
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+.product-image {
+    background: #F8F9FC;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 16px;
+}
+
+.product-title {
+    font-size: 36px;
+    font-family: 'Manrope', sans-serif;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #5F9EF0;
+    margin: 20px 0;
+}
+
+.product-description {
+    color: #5B6E8C;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.product-characteristics {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 16px;
+    margin: 20px 0;
+}
+
+.product-characteristics h3 {
+    margin-bottom: 15px;
+}
+
+.char-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #E1E8F0;
+}
+
+.char-item:last-child {
+    border-bottom: none;
+}
+
+.char-label {
+    font-weight: 600;
+    color: #1E2A3E;
+}
+
+.char-value {
+    color: #5B6E8C;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.quantity-btn {
+    background: #E1E8F0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #5F9EF0;
+    color: white;
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #E1E8F0;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fav-btn {
+    background: #E1E8F0;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.fav-btn.active {
+    background: #dc3545;
+    color: white;
+}
+
+.fav-btn:hover {
+    transform: scale(1.05);
+}
+
+.reviews-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #E1E8F0;
+}
+
+.reviews-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.review-card {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.review-rating {
+    color: #FFB800;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    color: #5B6E8C;
+    line-height: 1.5;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #A0B0C8;
+    margin-top: 10px;
+}
+
+.not-found {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.not-found h1 {
+    font-size: 72px;
+    color: #5F9EF0;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Футер */
+footer {
+    background: #F8F9FC;
+    padding: 60px 0 30px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+footer h4 {
+    font-family: 'Manrope', sans-serif;
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #5B6E8C;
+    transition: color 0.2s;
+}
+
+footer ul li a:hover {
+    color: #5F9EF0;
+}
+
+footer hr {
+    border-color: #E1E8F0;
+}
+
+.copyright {
+    text-align: center;
+    color: #5B6E8C;
+    margin-top: 30px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .product-title {
+        font-size: 28px;
+    }
+    .product-price {
+        font-size: 28px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+}

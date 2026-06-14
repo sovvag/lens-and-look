@@ -1,0 +1,135 @@
+/* === СТИЛИ ДЛЯ СТРАНИЦЫ ВОЗВРАТА И ГАРАНТИИ === */
+
+.page-header {
+    margin: 40px 0 20px;
+    font-size: 36px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.returns-block {
+    background: #F8F9FC;
+    padding: 40px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+}
+
+.returns-block h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.returns-block h3:first-child {
+    margin-top: 0;
+}
+
+.returns-block p {
+    color: #5B6E8C;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.returns-list {
+    list-style: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.returns-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #E1E8F0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.returns-list li:last-child {
+    border-bottom: none;
+}
+
+.returns-note {
+    background: #E8F0FE;
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 20px;
+    color: #5F9EF0;
+}
+
+.warning-note {
+    background: #FFF3E0;
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 20px;
+    color: #E67E22;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #5F9EF0;
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+/* Футер */
+footer {
+    background: #F8F9FC;
+    padding: 60px 0 30px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+footer h4 {
+    font-family: 'Manrope', sans-serif;
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #5B6E8C;
+    transition: color 0.2s;
+}
+
+footer ul li a:hover {
+    color: #5F9EF0;
+}
+
+footer hr {
+    border-color: #E1E8F0;
+}
+
+.copyright {
+    text-align: center;
+    color: #5B6E8C;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .returns-block {
+        padding: 25px;
+    }
+    .page-header {
+        font-size: 28px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+}

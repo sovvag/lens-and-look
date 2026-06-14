@@ -6,93 +6,17 @@
     <title>Возврат и гарантия - Lens & Look</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .page-header {
-            margin: 40px 0 20px;
-            font-size: 36px;
-            font-family: 'Manrope', sans-serif;
-        }
-        .returns-block {
-            background: #F8F9FC;
-            padding: 40px;
-            border-radius: 24px;
-            margin-bottom: 40px;
-        }
-        .returns-block h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            margin-top: 20px;
-        }
-        .returns-block h3:first-child {
-            margin-top: 0;
-        }
-        .returns-block p {
-            color: #5B6E8C;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .returns-list {
-            list-style: none;
-            margin-top: 15px;
-            margin-bottom: 20px;
-        }
-        .returns-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #E1E8F0;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .returns-list li:last-child {
-            border-bottom: none;
-        }
-        .returns-note {
-            background: #E8F0FE;
-            padding: 20px;
-            border-radius: 16px;
-            margin-top: 20px;
-            color: #5F9EF0;
-        }
-        .warning-note {
-            background: #FFF3E0;
-            padding: 20px;
-            border-radius: 16px;
-            margin-top: 20px;
-            color: #E67E22;
-        }
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: #5F9EF0;
-            color: white;
-            border-radius: 50%;
-            font-weight: 600;
-            margin-right: 12px;
-        }
-        @media (max-width: 768px) {
-            .returns-block {
-                padding: 25px;
-            }
-            .page-header {
-                font-size: 28px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/returns.css">
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="container header-inner">
         <a href="index.html" class="logo">👓 Lens & Look</a>
         <div class="search-bar">
-            <form action="search.html" method="GET" style="display: flex; gap: 10px; width: 100%;">
-                <input type="text" name="q" placeholder="Поиск линз, очков..." required style="width: 100%;">
-                <button type="submit" style="background: #5F9EF0; border: none; border-radius: 40px; padding: 0 20px; color: white; cursor: pointer;">🔍</button>
+            <form action="search.html" method="GET">
+                <input type="text" name="q" placeholder="Поиск линз, очков..." required>
+                <button type="submit">🔍</button>
             </form>
         </div>
         <div class="nav-links">
@@ -101,6 +25,10 @@
             <a href="payment.html">Оплата</a>
             <a href="returns.html">Возврат</a>
             <a href="account.html">Личный кабинет</a>
+            <a href="favorites.html" class="favorites-icon">
+                ❤️ 
+                <span class="favorites-count" id="favoritesCount">0</span>
+            </a>
             <a href="cart.html" class="cart-icon">
                 🛒 
                 <span class="cart-count" id="cartCount">0</span>
@@ -169,51 +97,33 @@
     </div>
 </main>
 
-<!-- FOOTER -->
-<footer style="background: #F8F9FC; padding: 60px 0 30px; margin-top: 80px;">
+<footer>
     <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        <div class="footer-grid">
             <div>
-                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Lens & Look</h4>
-                <p style="color: #5B6E8C;">Заботимся о вашем зрении с 2024 года</p>
+                <h4>Lens & Look</h4>
+                <p>Заботимся о вашем зрении с 2024 года</p>
             </div>
             <div>
-                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Покупателям</h4>
-                <ul style="list-style: none;">
-                    <li><a href="delivery.html" style="text-decoration: none; color: #5B6E8C;">Доставка</a></li>
-                    <li><a href="payment.html" style="text-decoration: none; color: #5B6E8C;">Оплата</a></li>
-                    <li><a href="returns.html" style="text-decoration: none; color: #5B6E8C;">Возврат</a></li>
+                <h4>Покупателям</h4>
+                <ul>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="payment.html">Оплата</a></li>
+                    <li><a href="returns.html">Возврат</a></li>
                 </ul>
             </div>
             <div>
-                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Контакты</h4>
-                <p style="color: #5B6E8C;">📞 8-800-555-01-01</p>
-                <p style="color: #5B6E8C;">✉️ info@lenslook.ru</p>
+                <h4>Контакты</h4>
+                <p>📞 8-800-555-01-01</p>
+                <p>✉️ info@lenslook.ru</p>
             </div>
         </div>
-        <hr style="border-color: #E1E8F0;">
-        <p style="text-align: center; color: #5B6E8C; margin-top: 30px;">© 2024 Lens & Look. Все права защищены.</p>
+        <hr>
+        <p class="copyright">© 2024 Lens & Look. Все права защищены.</p>
     </div>
 </footer>
 
-<script>
-    // Функция для обновления счётчика корзины
-    function updateCartCount() {
-        const cart = localStorage.getItem('cart');
-        const cartItems = cart ? JSON.parse(cart) : [];
-        const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-        const cartCountElement = document.getElementById('cartCount');
-        if (cartCountElement) {
-            cartCountElement.textContent = totalItems;
-        }
-    }
-    
-    // Загружаем счётчик при загрузке страницы
-    document.addEventListener('DOMContentLoaded', () => {
-        updateCartCount();
-    });
-</script>
-
 <script src="assets/js/main.js"></script>
+<script src="assets/js/returns.js"></script>
 </body>
 </html>
