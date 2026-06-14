@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата - Lens & Look</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-header {
+            margin: 40px 0 20px;
+            font-size: 36px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .payment-block {
+            background: #F8F9FC;
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+        .payment-block h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .payment-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .payment-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #E1E8F0;
+            font-size: 16px;
+        }
+        .payment-list li:last-child {
+            border-bottom: none;
+        }
+        .payment-note {
+            background: #E8F0FE;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 20px;
+            color: #5F9EF0;
+        }
+        .secure-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .payment-block {
+                padding: 25px;
+            }
+            .page-header {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">👓 Lens & Look</a>
+        <div class="search-bar">
+            <form action="search.html" method="GET" style="display: flex; gap: 10px; width: 100%;">
+                <input type="text" name="q" placeholder="Поиск линз, очков..." required style="width: 100%;">
+                <button type="submit" style="background: #5F9EF0; border: none; border-radius: 40px; padding: 0 20px; color: white; cursor: pointer;">🔍</button>
+            </form>
+        </div>
+        <div class="nav-links">
+            <a href="catalog.html">Каталог</a>
+            <a href="delivery.html">Доставка</a>
+            <a href="payment.html">Оплата</a>
+            <a href="returns.html">Возврат</a>
+            <a href="account.html">Личный кабинет</a>
+            <a href="cart.html" class="cart-icon">
+                🛒 
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h1 class="page-header">💳 Оплата</h1>
+        
+        <div class="payment-block">
+            <h3>💳 Способы оплаты</h3>
+            <ul class="payment-list">
+                <li>💳 Банковские карты (Visa, Mastercard, МИР)</li>
+                <li>📱 Apple Pay / Google Pay</li>
+                <li>🤝 Рассрочка от Т-Банка и СберБанка</li>
+                <li>📲 СБП (Система быстрых платежей)</li>
+                <li>🏦 Наличные при получении (для курьерской доставки)</li>
+            </ul>
+            
+            <div class="payment-note">
+                🔒 Все платежи защищены. Мы не храним данные ваших карт.
+            </div>
+            
+            <div class="secure-badge">
+                🔐 Безопасная оплата
+            </div>
+        </div>
+        
+        <div class="payment-block">
+            <h3>📝 Как оплатить заказ</h3>
+            <ul class="payment-list">
+                <li><strong>1.</strong> Добавьте товары в корзину и перейдите к оформлению</li>
+                <li><strong>2.</strong> Выберите удобный способ оплаты</li>
+                <li><strong>3.</strong> Введите данные карты или подтвердите платеж через приложение банка</li>
+                <li><strong>4.</strong> После оплаты вы получите подтверждение на email</li>
+            </ul>
+        </div>
+        
+        <div class="payment-block">
+            <h3>❓ Частые вопросы об оплате</h3>
+            <ul class="payment-list">
+                <li><strong>🤝 Как оформить рассрочку?</strong> — Выберите рассрочку при оформлении, заполните заявку на 2 минуты</li>
+                <li><strong>💳 Нужна ли комиссия?</strong> — Нет, все способы оплаты без комиссии</li>
+                <li><strong>📄 Придёт ли чек?</strong> — Да, электронный чек придёт на вашу почту</li>
+                <li><strong>🔄 Можно ли вернуть деньги?</strong> — Да, в соответствии с политикой возврата</li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer style="background: #F8F9FC; padding: 60px 0 30px; margin-top: 80px;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Lens & Look</h4>
+                <p style="color: #5B6E8C;">Заботимся о вашем зрении с 2024 года</p>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Покупателям</h4>
+                <ul style="list-style: none;">
+                    <li><a href="delivery.html" style="text-decoration: none; color: #5B6E8C;">Доставка</a></li>
+                    <li><a href="payment.html" style="text-decoration: none; color: #5B6E8C;">Оплата</a></li>
+                    <li><a href="returns.html" style="text-decoration: none; color: #5B6E8C;">Возврат</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Контакты</h4>
+                <p style="color: #5B6E8C;">📞 8-800-555-01-01</p>
+                <p style="color: #5B6E8C;">✉️ info@lenslook.ru</p>
+            </div>
+        </div>
+        <hr style="border-color: #E1E8F0;">
+        <p style="text-align: center; color: #5B6E8C; margin-top: 30px;">© 2024 Lens & Look. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    // Функция для обновления счётчика корзины
+    function updateCartCount() {
+        const cart = localStorage.getItem('cart');
+        const cartItems = cart ? JSON.parse(cart) : [];
+        const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCountElement = document.getElementById('cartCount');
+        if (cartCountElement) {
+            cartCountElement.textContent = totalItems;
+        }
+    }
+    
+    // Загружаем счётчик при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCartCount();
+    });
+</script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

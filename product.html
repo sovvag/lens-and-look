@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар - Lens & Look</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin: 50px 0;
+        }
+        .product-image {
+            background: #F8F9FC;
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+        }
+        .product-image img {
+            max-width: 100%;
+            border-radius: 16px;
+        }
+        .product-title {
+            font-size: 36px;
+            font-family: 'Manrope', sans-serif;
+            margin-bottom: 15px;
+        }
+        .product-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #5F9EF0;
+            margin: 20px 0;
+        }
+        .product-description {
+            color: #5B6E8C;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .product-characteristics {
+            background: #F8F9FC;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+        .product-characteristics h3 {
+            margin-bottom: 15px;
+        }
+        .char-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #E1E8F0;
+        }
+        .char-item:last-child {
+            border-bottom: none;
+        }
+        .char-label {
+            font-weight: 600;
+            color: #1E2A3E;
+        }
+        .char-value {
+            color: #5B6E8C;
+        }
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .quantity-btn {
+            background: #E1E8F0;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.2s;
+        }
+        .quantity-btn:hover {
+            background: #5F9EF0;
+            color: white;
+        }
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            border: 1px solid #E1E8F0;
+            border-radius: 12px;
+            padding: 8px;
+        }
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .reviews-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #E1E8F0;
+        }
+        .reviews-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .review-card {
+            background: #F8F9FC;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+        .review-author {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .review-rating {
+            color: #FFB800;
+            margin-bottom: 10px;
+        }
+        .review-text {
+            color: #5B6E8C;
+            line-height: 1.5;
+        }
+        .review-date {
+            font-size: 12px;
+            color: #A0B0C8;
+            margin-top: 10px;
+        }
+        .not-found {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .not-found h1 {
+            font-size: 72px;
+            color: #5F9EF0;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .product-title {
+                font-size: 28px;
+            }
+            .product-price {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">👓 Lens & Look</a>
+        <div class="search-bar">
+            <form action="search.html" method="GET" style="display: flex; gap: 10px; width: 100%;">
+                <input type="text" name="q" placeholder="Поиск линз, очков..." required style="width: 100%;">
+                <button type="submit" style="background: #5F9EF0; border: none; border-radius: 40px; padding: 0 20px; color: white; cursor: pointer;">🔍</button>
+            </form>
+        </div>
+        <div class="nav-links">
+            <a href="catalog.html">Каталог</a>
+            <a href="delivery.html">Доставка</a>
+            <a href="payment.html">Оплата</a>
+            <a href="returns.html">Возврат</a>
+            <a href="account.html">Личный кабинет</a>
+            <a href="cart.html" class="cart-icon">
+                🛒 
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container" id="productContent">
+        <!-- Содержимое будет загружено через JS -->
+        <div style="text-align: center; padding: 100px;">Загрузка...</div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer style="background: #F8F9FC; padding: 60px 0 30px; margin-top: 80px;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Lens & Look</h4>
+                <p style="color: #5B6E8C;">Заботимся о вашем зрении с 2024 года</p>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Покупателям</h4>
+                <ul style="list-style: none;">
+                    <li><a href="delivery.html" style="text-decoration: none; color: #5B6E8C;">Доставка</a></li>
+                    <li><a href="payment.html" style="text-decoration: none; color: #5B6E8C;">Оплата</a></li>
+                    <li><a href="returns.html" style="text-decoration: none; color: #5B6E8C;">Возврат</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Контакты</h4>
+                <p style="color: #5B6E8C;">📞 8-800-555-01-01</p>
+                <p style="color: #5B6E8C;">✉️ info@lenslook.ru</p>
+            </div>
+        </div>
+        <hr style="border-color: #E1E8F0;">
+        <p style="text-align: center; color: #5B6E8C; margin-top: 30px;">© 2024 Lens & Look. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    // === БАЗА ТОВАРОВ (должна совпадать с catalog.html и cart.html) ===
+    const productsDB = [
+        { 
+            id: 1, 
+            name: "Acuvue Oasys 1-Day", 
+            price: 2490, 
+            description: "Ежедневные контактные линзы с высокой степенью увлажнения. Технология HydraLuxe для комфорта в течение всего дня. Подходят для чувствительных глаз.",
+            category: "contacts", 
+            image: "product1.jpg",
+            brand: "Johnson & Johnson",
+            material: "Силикон-гидрогель",
+            wearing_period: "1 день",
+            packaging: "30 линз",
+            moisture: "Высокое"
+        },
+        { 
+            id: 2, 
+            name: "CooperVision Biofinity", 
+            price: 3200, 
+            description: "Двухнедельные силикон-гидрогелевые линзы с технологией Aquaform. Обеспечивают высокую кислородопроницаемость и естественное увлажнение.",
+            category: "contacts", 
+            image: "product2.jpg",
+            brand: "CooperVision",
+            material: "Силикон-гидрогель (Comfilcon A)",
+            wearing_period: "2 недели",
+            packaging: "6 линз",
+            moisture: "Естественное"
+        },
+        { 
+            id: 3, 
+            name: "Air Optix Night & Day", 
+            price: 3850, 
+            description: "Линзы непрерывного ношения до 30 дней. Разрешены для сна в линзах. Высокая кислородопроницаемость.",
+            category: "contacts", 
+            image: "product3.jpg",
+            brand: "Alcon",
+            material: "Силикон-гидрогель (Lotrafilcon A)",
+            wearing_period: "до 30 дней непрерывно",
+            packaging: "3 линзы",
+            moisture: "Среднее"
+        },
+        { 
+            id: 4, 
+            name: "Dailies Total 1", 
+            price: 2990, 
+            description: "Однодневные линзы с водоградиентным профилем. Мягкие как вода, обеспечивают исключительный комфорт.",
+            category: "contacts", 
+            image: "product4.jpg",
+            brand: "Alcon",
+            material: "Делефилькон А",
+            wearing_period: "1 день",
+            packaging: "30 линз",
+            moisture: "Максимальное"
+        },
+        { 
+            id: 5, 
+            name: "Очки Ray-Ban RX", 
+            price: 12900, 
+            description: "Классические оправы с диоптриями. Стильный дизайн и качественные линзы от Ray-Ban.",
+            category: "glasses", 
+            image: "product5.jpg",
+            brand: "Ray-Ban",
+            material: "Ацетат/Металл",
+            lens_type: "С диоптриями",
+            coating: "Антибликовое",
+            protection: "UV400"
+        },
+        { 
+            id: 6, 
+            name: "MyDay daily disposable", 
+            price: 1890, 
+            description: "Ежедневные линзы для активного образа жизни. Тонкие, дышащие, не ощущаются на глазах.",
+            category: "contacts", 
+            image: "product6.jpg",
+            brand: "CooperVision",
+            material: "Силикон-гидрогель (Stenfilcon A)",
+            wearing_period: "1 день",
+            packaging: "30 линз",
+            moisture: "Высокое"
+        },
+        { 
+            id: 7, 
+            name: "Очки Oakley", 
+            price: 15500, 
+            description: "Спортивные очки с защитой от ультрафиолета. Идеально для активного отдыха и спорта.",
+            category: "sunglasses", 
+            image: "product7.jpg",
+            brand: "Oakley",
+            material: "O-Matter",
+            lens_type: "Поляризационные",
+            protection: "UV400",
+            sport: "Бег, велоспорт"
+        },
+        { 
+            id: 8, 
+            name: "Clariti 1-Day", 
+            price: 2190, 
+            description: "Однодневные силикон-гидрогелевые линзы. Сочетание комфорта и доступной цены.",
+            category: "contacts", 
+            image: "product8.jpg",
+            brand: "CooperVision",
+            material: "Силикон-гидрогель (Somofilcon A)",
+            wearing_period: "1 день",
+            packaging: "30 линз",
+            moisture: "Хорошее"
+        },
+        { 
+            id: 9, 
+            name: "Ночные линзы Paragon CRT", 
+            price: 25000, 
+            description: "Ортокератологические линзы для коррекции зрения во время сна. Утром видите отлично без линз и очков.",
+            category: "ortho", 
+            image: "product9.jpg",
+            brand: "Paragon",
+            material: "Paragon HDS 100",
+            wearing_period: "Ночное ношение",
+            packaging: "2 линзы",
+            effect: "Временная коррекция"
+        },
+        { 
+            id: 10, 
+            name: "Очки Polaroid", 
+            price: 8900, 
+            description: "Поляризационные очки для вождения. Убирают блики, повышают контрастность.",
+            category: "sunglasses", 
+            image: "product10.jpg",
+            brand: "Polaroid",
+            material: "Пластик",
+            lens_type: "Поляризационные",
+            protection: "UV400",
+            feature: "Для вождения"
+        }
+    ];
+
+    // === РАБОТА С КОРЗИНОЙ ===
+    function getCart() {
+        const cart = localStorage.getItem('cart');
+        return cart ? JSON.parse(cart) : [];
+    }
+    
+    function saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+    
+    function addToCart(productId, quantity = 1) {
+        let cart = getCart();
+        const existingItem = cart.find(item => item.id === productId);
+        
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({ id: productId, quantity: quantity });
+        }
+        
+        saveCart(cart);
+        showNotification('✅ Товар добавлен в корзину');
+    }
+    
+    function updateCartCount() {
+        const cart = getCart();
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCountElement = document.getElementById('cartCount');
+        if (cartCountElement) {
+            cartCountElement.textContent = totalItems;
+        }
+    }
+    
+    function showNotification(message) {
+        let notif = document.getElementById('productNotification');
+        if (notif) notif.remove();
+        
+        notif = document.createElement('div');
+        notif.id = 'productNotification';
+        notif.textContent = message;
+        notif.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #5F9EF0;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        `;
+        document.body.appendChild(notif);
+        setTimeout(() => notif.remove(), 2000);
+    }
+    
+    // === ПОЛУЧЕНИЕ ID ИЗ URL ===
+    function getProductIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return parseInt(urlParams.get('id'));
+    }
+    
+    // === ОТРИСОВКА СТРАНИЦЫ ТОВАРА ===
+    function renderProduct() {
+        const productId = getProductIdFromUrl();
+        const product = productsDB.find(p => p.id === productId);
+        const container = document.getElementById('productContent');
+        
+        // Если товар не найден — показываем 404
+        if (!product) {
+            container.innerHTML = `
+                <div class="not-found">
+                    <h1>404</h1>
+                    <h2>Товар не найден</h2>
+                    <p>К сожалению, такого товара нет в нашем каталоге.</p>
+                    <a href="catalog.html" class="btn back-link">Вернуться в каталог</a>
+                </div>
+            `;
+            return;
+        }
+        
+        // Отзывы (заглушка)
+        const reviews = [
+            { author: "Анна", rating: 5, text: "Отличные линзы! Очень комфортные, глаза не сохнут весь день.", date: "15.03.2024" },
+            { author: "Михаил", rating: 5, text: "Беру не первый раз. Качество отличное, доставка быстрая.", date: "10.03.2024" },
+            { author: "Екатерина", rating: 4, text: "Хорошие линзы, но цена кусается. В остальном всё отлично.", date: "05.03.2024" }
+        ];
+        
+        // Формируем характеристики
+        let characteristicsHtml = '';
+        if (product.brand) characteristicsHtml += `<div class="char-item"><span class="char-label">Бренд:</span><span class="char-value">${product.brand}</span></div>`;
+        if (product.material) characteristicsHtml += `<div class="char-item"><span class="char-label">Материал:</span><span class="char-value">${product.material}</span></div>`;
+        if (product.wearing_period) characteristicsHtml += `<div class="char-item"><span class="char-label">Срок ношения:</span><span class="char-value">${product.wearing_period}</span></div>`;
+        if (product.packaging) characteristicsHtml += `<div class="char-item"><span class="char-label">Упаковка:</span><span class="char-value">${product.packaging}</span></div>`;
+        if (product.moisture) characteristicsHtml += `<div class="char-item"><span class="char-label">Увлажнение:</span><span class="char-value">${product.moisture}</span></div>`;
+        if (product.lens_type) characteristicsHtml += `<div class="char-item"><span class="char-label">Тип линз:</span><span class="char-value">${product.lens_type}</span></div>`;
+        if (product.coating) characteristicsHtml += `<div class="char-item"><span class="char-label">Покрытие:</span><span class="char-value">${product.coating}</span></div>`;
+        if (product.protection) characteristicsHtml += `<div class="char-item"><span class="char-label">Защита:</span><span class="char-value">${product.protection}</span></div>`;
+        if (product.sport) characteristicsHtml += `<div class="char-item"><span class="char-label">Для спорта:</span><span class="char-value">${product.sport}</span></div>`;
+        if (product.effect) characteristicsHtml += `<div class="char-item"><span class="char-label">Эффект:</span><span class="char-value">${product.effect}</span></div>`;
+        if (product.feature) characteristicsHtml += `<div class="char-item"><span class="char-label">Особенность:</span><span class="char-value">${product.feature}</span></div>`;
+        
+        // Формируем отзывы
+        let reviewsHtml = '';
+        reviews.forEach(review => {
+            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+            reviewsHtml += `
+                <div class="review-card">
+                    <div class="review-author">${review.author}</div>
+                    <div class="review-rating">${stars}</div>
+                    <div class="review-text">${review.text}</div>
+                    <div class="review-date">${review.date}</div>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = `
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="assets/images/${product.image}" onerror="this.src='https://placehold.co/400x400/5F9EF0/white?text=${product.name}'">
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">${product.name}</h1>
+                    <div class="product-price">${product.price.toLocaleString('ru-RU')} ₽</div>
+                    <div class="product-description">${product.description}</div>
+                    
+                    <div class="product-characteristics">
+                        <h3>📋 Характеристики</h3>
+                        ${characteristicsHtml || '<p>Информация уточняется</p>'}
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decreaseQty">-</button>
+                        <input type="number" id="quantityInput" class="quantity-input" value="1" min="1" max="10">
+                        <button class="quantity-btn" id="increaseQty">+</button>
+                    </div>
+                    
+                    <button class="btn add-to-cart-btn" id="addToCartBtn">🛒 Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="reviews-section">
+                <h2 class="reviews-title">⭐ Отзывы покупателей</h2>
+                ${reviewsHtml}
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" onclick="alert('Функция добавления отзывов в разработке')">Оставить отзыв</button>
+                </div>
+            </div>
+        `;
+        
+        // Навешиваем обработчики на кнопки количества
+        const decreaseBtn = document.getElementById('decreaseQty');
+        const increaseBtn = document.getElementById('increaseQty');
+        const quantityInput = document.getElementById('quantityInput');
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        
+        if (decreaseBtn) {
+            decreaseBtn.addEventListener('click', () => {
+                let val = parseInt(quantityInput.value);
+                if (val > 1) quantityInput.value = val - 1;
+            });
+        }
+        
+        if (increaseBtn) {
+            increaseBtn.addEventListener('click', () => {
+                let val = parseInt(quantityInput.value);
+                if (val < 10) quantityInput.value = val + 1;
+            });
+        }
+        
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener('click', () => {
+                const quantity = parseInt(quantityInput.value);
+                addToCart(product.id, quantity);
+            });
+        }
+    }
+    
+    // Добавляем стили для анимации
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Загружаем страницу при загрузке
+    document.addEventListener('DOMContentLoaded', () => {
+        renderProduct();
+        updateCartCount();
+    });
+</script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

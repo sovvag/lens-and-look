@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens & Look - Интернет-магазин оптики</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Дополнительные стили для страницы */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 60px 0;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            font-family: 'Manrope', sans-serif;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1E2A3E, #5F9EF0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #5B6E8C;
+            margin-bottom: 30px;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 30px;
+        }
+        section {
+            margin: 60px 0;
+        }
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-family: 'Manrope', sans-serif;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER (вставляем вместо include) -->
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">👓 Lens & Look</a>
+        <div class="search-bar">
+            <form action="search.html" method="GET" style="display: flex; gap: 10px; width: 100%;">
+                <input type="text" name="q" placeholder="Поиск линз, очков..." required style="width: 100%;">
+                <button type="submit" style="background: #5F9EF0; border: none; border-radius: 40px; padding: 0 20px; color: white; cursor: pointer;">🔍</button>
+            </form>
+        </div>
+        <div class="nav-links">
+            <a href="catalog.html">Каталог</a>
+            <a href="delivery.html">Доставка</a>
+            <a href="payment.html">Оплата</a>
+            <a href="returns.html">Возврат</a>
+            <a href="account.html">Личный кабинет</a>
+            <a href="cart.html" class="cart-icon">
+                🛒 
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- Hero-блок с анимацией -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Идеальное зрение<br>начинается здесь</h1>
+                <p>Очки, контактные линзы, ночные и склеральные линзы от ведущих брендов</p>
+                <a href="catalog.html" class="btn">В каталог →</a>
+            </div>
+            <div class="hero-image">
+                <img src="./assets/images/glasses_hero.png" alt="Модные очки" onerror="this.src='https://placehold.co/500x400/5F9EF0/white?text=Optics'">
+            </div>
+        </div>
+
+        <!-- Новые поступления (статические товары) -->
+        <section>
+            <h2>✨ Новые поступления</h2>
+            <div class="products-grid">
+                <!-- Товар 1 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=1'">
+                    <img src="./assets/images/product1.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Acuvue+Oasys'">
+                    <div class="product-info">
+                        <h3>Acuvue Oasys 1-Day</h3>
+                        <div class="price">2 490 ₽</div>
+                        <button class="btn add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <!-- Товар 2 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=2'">
+                    <img src="assets/images/product2.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Biofinity'">
+                    <div class="product-info">
+                        <h3>CooperVision Biofinity</h3>
+                        <div class="price">3 200 ₽</div>
+                        <button class="btn add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <!-- Товар 3 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=3'">
+                    <img src="assets/images/product3.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Air+Optix'">
+                    <div class="product-info">
+                        <h3>Air Optix Night & Day</h3>
+                        <div class="price">3 850 ₽</div>
+                        <button class="btn add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <!-- Товар 4 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=4'">
+                    <img src="assets/images/product4.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Dailies+Total1'">
+                    <div class="product-info">
+                        <h3>Dailies Total 1</h3>
+                        <div class="price">2 990 ₽</div>
+                        <button class="btn add-to-cart">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярное (статические товары) -->
+        <section>
+            <h2>⭐ Популярное</h2>
+            <div class="products-grid">
+                <!-- Товар 5 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=5'">
+                    <img src="assets/images/product5.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Ray-Ban'">
+                    <div class="product-info">
+                        <h3>Очки Ray-Ban RX</h3>
+                        <div class="price">12 900 ₽</div>
+                        <button class="btn add-to-cart">Купить</button>
+                    </div>
+                </div>
+                <!-- Товар 6 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=6'">
+                    <img src="assets/images/product6.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=MyDay'">
+                    <div class="product-info">
+                        <h3>MyDay daily disposable</h3>
+                        <div class="price">1 890 ₽</div>
+                        <button class="btn add-to-cart">Купить</button>
+                    </div>
+                </div>
+                <!-- Товар 7 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=7'">
+                    <img src="assets/images/product7.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Oakley'">
+                    <div class="product-info">
+                        <h3>Очки Oakley</h3>
+                        <div class="price">15 500 ₽</div>
+                        <button class="btn add-to-cart">Купить</button>
+                    </div>
+                </div>
+                <!-- Товар 8 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=8'">
+                    <img src="assets/images/product8.jpg" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=Clariti'">
+                    <div class="product-info">
+                        <h3>Clariti 1-Day</h3>
+                        <div class="price">2 190 ₽</div>
+                        <button class="btn add-to-cart">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- FOOTER (вставляем вместо include) -->
+<footer style="background: #F8F9FC; padding: 60px 0 30px; margin-top: 80px;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Lens & Look</h4>
+                <p style="color: #5B6E8C;">Заботимся о вашем зрении с 2024 года</p>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Покупателям</h4>
+                <ul style="list-style: none;">
+                    <li><a href="delivery.html" style="text-decoration: none; color: #5B6E8C;">Доставка</a></li>
+                    <li><a href="payment.html" style="text-decoration: none; color: #5B6E8C;">Оплата</a></li>
+                    <li><a href="returns.html" style="text-decoration: none; color: #5B6E8C;">Возврат</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Контакты</h4>
+                <p style="color: #5B6E8C;">📞 8-800-555-01-01</p>
+                <p style="color: #5B6E8C;">✉️ info@lenslook.ru</p>
+            </div>
+        </div>
+        <hr style="border-color: #E1E8F0;">
+        <p style="text-align: center; color: #5B6E8C; margin-top: 30px;">© 2024 Lens & Look. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

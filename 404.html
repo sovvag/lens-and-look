@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | Lens & Look</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #F8F9FC 0%, #FFFFFF 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1E2A3E;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #5F9EF0, #3A7BD5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #5B6E8C;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            background: #5F9EF0;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: #3A7BD5;
+            transform: scale(1.02);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #5F9EF0;
+            border: 2px solid #5F9EF0;
+        }
+        
+        .btn-outline:hover {
+            background: #5F9EF0;
+            color: white;
+        }
+        
+        .suggestions {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #E1E8F0;
+        }
+        
+        .suggestions h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1E2A3E;
+        }
+        
+        .suggestions-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .suggestions-links a {
+            color: #5F9EF0;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: #E8F0FE;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+        
+        .suggestions-links a:hover {
+            background: #5F9EF0;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            .error-icon {
+                font-size: 60px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-icon">🔍</div>
+        <div class="error-code">404</div>
+        <h1>Страница не найдена</h1>
+        <p>Товар или страница, которую вы ищете, не существует или была перемещена.<br>Возможно, вы искали линзы или очки?</p>
+        
+        <div>
+            <a href="index.html" class="btn">🏠 На главную</a>
+            <a href="catalog.html" class="btn btn-outline">📋 В каталог</a>
+        </div>
+        
+        <div class="suggestions">
+            <h3>🔍 Популярные разделы</h3>
+            <div class="suggestions-links">
+                <a href="catalog.html?cat=contacts">Контактные линзы</a>
+                <a href="catalog.html?cat=glasses">Очки</a>
+                <a href="catalog.html?cat=sunglasses">Солнцезащитные очки</a>
+                <a href="catalog.html?cat=ortho">Ночные линзы</a>
+                <a href="delivery.html">Доставка</a>
+                <a href="cart.html">Корзина</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

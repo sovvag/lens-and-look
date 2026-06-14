@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Lens & Look</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: #E1E8F0;
+            color: #333;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+        }
+        .filter-btn.active {
+            background: #5F9EF0;
+            color: white;
+        }
+        .filter-btn:hover {
+            background: #5F9EF0;
+            color: white;
+        }
+        .page-title {
+            margin: 40px 0 20px;
+            font-size: 36px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .no-products {
+            text-align: center;
+            padding: 60px;
+            color: #5B6E8C;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">👓 Lens & Look</a>
+        <div class="search-bar">
+            <form action="search.html" method="GET" style="display: flex; gap: 10px; width: 100%;">
+                <input type="text" name="q" placeholder="Поиск линз, очков..." required style="width: 100%;">
+                <button type="submit" style="background: #5F9EF0; border: none; border-radius: 40px; padding: 0 20px; color: white; cursor: pointer;">🔍</button>
+            </form>
+        </div>
+        <div class="nav-links">
+            <a href="catalog.html">Каталог</a>
+            <a href="delivery.html">Доставка</a>
+            <a href="payment.html">Оплата</a>
+            <a href="returns.html">Возврат</a>
+            <a href="account.html">Личный кабинет</a>
+            <a href="cart.html" class="cart-icon">
+                🛒 
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h1 class="page-title">Каталог товаров</h1>
+        
+        <!-- Фильтр по категориям (JavaScript) -->
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">Все</button>
+            <button class="filter-btn" data-category="glasses">Очки</button>
+            <button class="filter-btn" data-category="sunglasses">Солнцезащитные очки</button>
+            <button class="filter-btn" data-category="contacts">Контактные линзы</button>
+            <button class="filter-btn" data-category="ortho">Ночные линзы</button>
+        </div>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Товары будут загружены через JavaScript -->
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer style="background: #F8F9FC; padding: 60px 0 30px; margin-top: 80px;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Lens & Look</h4>
+                <p style="color: #5B6E8C;">Заботимся о вашем зрении с 2024 года</p>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Покупателям</h4>
+                <ul style="list-style: none;">
+                    <li><a href="delivery.html" style="text-decoration: none; color: #5B6E8C;">Доставка</a></li>
+                    <li><a href="payment.html" style="text-decoration: none; color: #5B6E8C;">Оплата</a></li>
+                    <li><a href="returns.html" style="text-decoration: none; color: #5B6E8C;">Возврат</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-family: 'Manrope'; margin-bottom: 20px;">Контакты</h4>
+                <p style="color: #5B6E8C;">📞 8-800-555-01-01</p>
+                <p style="color: #5B6E8C;">✉️ info@lenslook.ru</p>
+            </div>
+        </div>
+        <hr style="border-color: #E1E8F0;">
+        <p style="text-align: center; color: #5B6E8C; margin-top: 30px;">© 2024 Lens & Look. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    // База данных товаров (вручную)
+    const products = [
+        { id: 1, name: "Acuvue Oasys 1-Day", price: 2490, description: "Ежедневные контактные линзы с высокой степенью увлажнения", category: "contacts", image: "product1.jpg" },
+        { id: 2, name: "CooperVision Biofinity", price: 3200, description: "Двухнедельные линзы с технологией Aquaform", category: "contacts", image: "product2.jpg" },
+        { id: 3, name: "Air Optix Night & Day", price: 3850, description: "Линзы непрерывного ношения до 30 дней", category: "contacts", image: "product3.jpg" },
+        { id: 4, name: "Dailies Total 1", price: 2990, description: "Однодневные линзы с водоградиентным профилем", category: "contacts", image: "product4.jpg" },
+        { id: 5, name: "Очки Ray-Ban RX", price: 12900, description: "Классические оправы с диоптриями", category: "glasses", image: "product5.jpg" },
+        { id: 6, name: "MyDay daily disposable", price: 1890, description: "Ежедневные линзы для активного образа жизни", category: "contacts", image: "product6.jpg" },
+        { id: 7, name: "Очки Oakley", price: 15500, description: "Спортивные очки с защитой от ультрафиолета", category: "sunglasses", image: "product7.jpg" },
+        { id: 8, name: "Clariti 1-Day", price: 2190, description: "Однодневные силикон-гидрогелевые линзы", category: "contacts", image: "product8.jpg" },
+        { id: 9, name: "Очки имиджевые для компьютера прозрачные", price: 25000, description: "Иммеджевые очки для работы за компьютером", category: "glasses", image: "product9.jpg" },
+        { id: 10, name: "Очки Polaroid", price: 8900, description: "Поляризационные очки для вождения", category: "sunglasses", image: "product10.jpg" },
+        { id: 11, name: "Солнцезащитные очки Tom Ford", price: 21900, description: "Премиум оправа с защитой UV400", category: "sunglasses", image: "product11.jpg" },
+        { id: 12, name: "Очки Kitten", price: 28000, description: "Культовые очки для настоящих офисных сирен", category: "glasses", image: "product12.jpg" }
+    ];
+
+    // Функция для отображения товаров
+    function displayProducts(category = "all") {
+        const grid = document.getElementById('productsGrid');
+        
+        let filteredProducts = products;
+        if (category !== "all") {
+            filteredProducts = products.filter(p => p.category === category);
+        }
+        
+        if (filteredProducts.length === 0) {
+            grid.innerHTML = '<div class="no-products">😕 Товары не найдены</div>';
+            return;
+        }
+        
+        let html = '';
+        filteredProducts.forEach(product => {
+            html += `
+                <div class="product-card" onclick="window.location.href='product.html?id=${product.id}'">
+                    <img src="assets/images/${product.image}" onerror="this.src='https://placehold.co/300x200/5F9EF0/white?text=${product.name}'">
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p style="color: #5B6E8C; font-size: 14px;">${product.description.substring(0, 80)}...</p>
+                        <div class="price">${product.price.toLocaleString('ru-RU')} ₽</div>
+                        <button class="btn add-to-cart" data-id="${product.id}">В корзину</button>
+                    </div>
+                </div>
+            `;
+        });
+        grid.innerHTML = html;
+    }
+    
+    // Фильтрация при клике на кнопки
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Убираем активный класс у всех
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            // Добавляем активный класс текущей
+            this.classList.add('active');
+            // Получаем категорию
+            const category = this.getAttribute('data-category');
+            // Отображаем товары
+            displayProducts(category);
+        });
+    });
+    
+    // Загружаем все товары при старте
+    displayProducts('all');
+</script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
