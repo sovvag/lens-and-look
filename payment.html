@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оплата - Lens & Look</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/payment.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
 <header>
     <div class="container header-inner">
-        <a href="index.html" class="logo">👓 Lens & Look</a>
+        <a href="index.html" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="4"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+            </svg>
+            Lens & Look
+        </a>
         <div class="search-bar">
             <form action="search.html" method="GET">
                 <input type="text" name="q" placeholder="Поиск линз, очков..." required>
-                <button type="submit">🔍</button>
+                <button type="submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
             </form>
         </div>
         <div class="nav-links">
@@ -26,11 +40,17 @@
             <a href="returns.html">Возврат</a>
             <a href="account.html">Личный кабинет</a>
             <a href="favorites.html" class="favorites-icon">
-                ❤️ 
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
                 <span class="favorites-count" id="favoritesCount">0</span>
             </a>
             <a href="cart.html" class="cart-icon">
-                🛒 
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
                 <span class="cart-count" id="cartCount">0</span>
             </a>
         </div>
@@ -39,29 +59,90 @@
 
 <main>
     <div class="container">
-        <h1 class="page-header">💳 Оплата</h1>
+        <h1 class="page-header">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 12px;">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+            Оплата
+        </h1>
         
         <div class="payment-block">
-            <h3>💳 Способы оплаты</h3>
+            <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <line x1="1" y1="10" x2="23" y2="10"/>
+                </svg>
+                Способы оплаты
+            </h3>
             <ul class="payment-list">
-                <li>💳 Банковские карты (Visa, Mastercard, МИР)</li>
-                <li>📱 Apple Pay / Google Pay</li>
-                <li>🤝 Рассрочка от Т-Банка и СберБанка</li>
-                <li>📲 СБП (Система быстрых платежей)</li>
-                <li>🏦 Наличные при получении (для курьерской доставки)</li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    Банковские карты (Visa, Mastercard, МИР)
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <rect x="2" y="5" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="12" x2="16" y2="12"/>
+                    </svg>
+                    Apple Pay / Google Pay
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    Рассрочка от Т-Банка и СберБанка
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    СБП (Система быстрых платежей)
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                        <circle cx="9" cy="18" r="2"/>
+                        <circle cx="15" cy="18" r="2"/>
+                    </svg>
+                    Наличные при получении (для курьерской доставки)
+                </li>
             </ul>
             
             <div class="payment-note">
-                🔒 Все платежи защищены. Мы не храним данные ваших карт.
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <polyline points="9 12 11 14 15 10"/>
+                </svg>
+                Все платежи защищены. Мы не храним данные ваших карт.
             </div>
             
             <div class="secure-badge">
-                🔐 Безопасная оплата
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Безопасная оплата
             </div>
         </div>
         
         <div class="payment-block">
-            <h3>📝 Как оплатить заказ</h3>
+            <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                Как оплатить заказ
+            </h3>
             <ul class="payment-list">
                 <li><strong>1.</strong> Добавьте товары в корзину и перейдите к оформлению</li>
                 <li><strong>2.</strong> Выберите удобный способ оплаты</li>
@@ -71,12 +152,51 @@
         </div>
         
         <div class="payment-block">
-            <h3>❓ Частые вопросы об оплате</h3>
+            <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                Частые вопросы об оплате
+            </h3>
             <ul class="payment-list">
-                <li><strong>🤝 Как оформить рассрочку?</strong> — Выберите рассрочку при оформлении, заполните заявку на 2 минуты</li>
-                <li><strong>💳 Нужна ли комиссия?</strong> — Нет, все способы оплаты без комиссии</li>
-                <li><strong>📄 Придёт ли чек?</strong> — Да, электронный чек придёт на вашу почту</li>
-                <li><strong>🔄 Можно ли вернуть деньги?</strong> — Да, в соответствии с политикой возврата</li>
+                <li>
+                    <strong>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E2A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        Как оформить рассрочку?
+                    </strong> — Выберите рассрочку при оформлении, заполните заявку на 2 минуты
+                </li>
+                <li>
+                    <strong>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E2A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                        Нужна ли комиссия?
+                    </strong> — Нет, все способы оплаты без комиссии
+                </li>
+                <li>
+                    <strong>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E2A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Придёт ли чек?
+                    </strong> — Да, электронный чек придёт на вашу почту
+                </li>
+                <li>
+                    <strong>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E2A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/>
+                        </svg>
+                        Можно ли вернуть деньги?
+                    </strong> — Да, в соответствии с политикой возврата
+                </li>
             </ul>
         </div>
     </div>
@@ -86,7 +206,13 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <h4>Lens & Look</h4>
+                <h4>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5F9EF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="4"/>
+                    </svg>
+                    Lens & Look
+                </h4>
                 <p>Заботимся о вашем зрении с 2024 года</p>
             </div>
             <div>
@@ -99,8 +225,19 @@
             </div>
             <div>
                 <h4>Контакты</h4>
-                <p>📞 8-800-555-01-01</p>
-                <p>✉️ info@lenslook.ru</p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    8-800-555-01-01
+                </p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B6E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    info@lenslook.ru
+                </p>
             </div>
         </div>
         <hr>
@@ -109,6 +246,5 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/payment.js"></script>
 </body>
 </html>
